@@ -1,4 +1,4 @@
-
+(function(){
 if (typeof channel === undefined) { var channel = 'general';}
 
 var Msg = Backbone.Model.extend({
@@ -107,3 +107,4 @@ $(function(){
 		}
 	});
 });
+)();
