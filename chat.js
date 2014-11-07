@@ -1,4 +1,6 @@
 
+if (typeof channel === undefined) { var channel = 'general';}
+
 var Msg = Backbone.Model.extend({
 	defaults: function(){ 
 		return {'user' : 'anon', 'message' : 'New Message!'}
@@ -7,7 +9,7 @@ var Msg = Backbone.Model.extend({
 
 MsgL = Backbone.Firebase.Collection.extend({
 	model: Msg,
-	firebase: new Firebase('https://boiling-heat-4811.firebaseio.com/<?php echo $c; ?>/messages')
+	firebase: new Firebase('https://boiling-heat-4811.firebaseio.com/' + channel + '/messages')
 }),
 
 MsgV = Backbone.View.extend({
