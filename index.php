@@ -1,1 +1,1 @@
-<?php include 'chat2.php'; ?>
+<?php include 'chat.php'; ?>
