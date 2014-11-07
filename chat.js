@@ -51,7 +51,7 @@ AppRouter = new (Backbone.Router.extend({
   },
   show: function(id){
 	var msg = new Msg({id: id})
-	msgV = new MsgV({model: msg});
+	var msgV = new MsgV({model: msg});
 	msgV.render();
 	$('#msgwin').html(msgV.el);
 	msg.fetch();
@@ -68,7 +68,7 @@ $(function(){
 		try{
 			localStorage.setItem('test', '1');
 			if(typeof localStorage.getItem('userName')==='string' && localStorage.getItem('userName').length > 0){
-				user = localStorage.getItem('userName'); 
+				var user = localStorage.getItem('userName'); 
 			}else{
 				user=prompt('Please enter a user name.');
 				localStorage.setItem('userName',user);
