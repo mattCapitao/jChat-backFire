@@ -1,5 +1,4 @@
-(function(){
-if (typeof channel === undefined) { var channel = 'general';}
+
 
 var Msg = Backbone.Model.extend({
 	defaults: function(){ 
@@ -9,7 +8,7 @@ var Msg = Backbone.Model.extend({
 
 MsgL = Backbone.Firebase.Collection.extend({
 	model: Msg,
-	firebase: new Firebase('https://boiling-heat-4811.firebaseio.com/' + channel + '/messages')
+	firebase: new Firebase('https://boiling-heat-4811.firebaseio.com/' + $('#channel').val() + '/messages')
 }),
 
 MsgV = Backbone.View.extend({
@@ -107,4 +106,3 @@ $(function(){
 		}
 	});
 });
-)();
