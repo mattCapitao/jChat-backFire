@@ -7,7 +7,7 @@ var Msg = Backbone.Model.extend({
 
 MsgL = Backbone.Firebase.Collection.extend({
 	model: Msg,
-	firebase: new Firebase("https://boiling-heat-4811.firebaseio.com/<?php echo $c; ?>/messages")
+	firebase: new Firebase('https://boiling-heat-4811.firebaseio.com/<?php echo $c; ?>/messages')
 }),
 
 MsgV = Backbone.View.extend({
@@ -23,7 +23,7 @@ MsgV = Backbone.View.extend({
 }),
 
 MsgLV = Backbone.View.extend({
-  el: $("#msgwin"),
+  el: $('#msgwin'),
   initialize: function(){
 	  this.collection.on('add', this.addOne, this);
 	  this.collection.on('reset', this.render, this);
@@ -35,12 +35,12 @@ MsgLV = Backbone.View.extend({
 	  var msgV = new MsgV({model: model});
 	  msgV.render();
 	  this.$el.append(msgV.el); 
-	  $("#msgwin").scrollTop($("#msgwin")[0].scrollHeight);
+	  $('#msgwin').scrollTop($('#msgwin')[0].scrollHeight);
   }
 }),
 
 AppRouter = new (Backbone.Router.extend({
-  routes: { "messages/:id": "show", "": "index" },
+  routes: { 'messages/:id': 'show', '': 'index' },
   initialize: function(options){
 	  this.msgL = new MsgL();
   },
@@ -77,7 +77,7 @@ $(function(){
 		}catch(error){
 			var erMsg='This may be due to private browsing mode. If you wish to cache your username for future logins please diable private browsing.';
 			user=prompt('Please enter a user name.');
-			alert('Your username could not be saved for future logins:'  + "\n\n" +erMsg );
+			alert('Your username could not be saved for future logins:'  + '\n\n' +erMsg );
 		}
 	},
 	
