@@ -72,8 +72,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 <script src="/js/underscore.js"></script> 
 <script src="http://backbonejs.org/backbone-min.js"></script> 
-<script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script> 
-<script src="https://cdn.firebase.com/libs/backfire/0.3.0/backfire.min.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAdeekWFkeKD13RwW2_tsCQasgCoB1qmgQ",
+    authDomain: "boiling-heat-4811.firebaseapp.com",
+    databaseURL: "https://boiling-heat-4811.firebaseio.com",
+    projectId: "boiling-heat-4811",
+    storageBucket: "boiling-heat-4811.appspot.com",
+    messagingSenderId: "345676605495"
+  };
+  firebase.initializeApp(config);
+</script>
 <script>
 var Msg = Backbone.Model.extend({
 	defaults: function(){ 
